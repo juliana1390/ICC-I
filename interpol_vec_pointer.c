@@ -1,6 +1,6 @@
 /*
     - order vectors;
-    - interpolate two vectors;
+    - interpolate two vectors.
 */
 
 #include <stdio.h>
@@ -65,7 +65,7 @@ int orderVector(int *A, int *B){
 
 // interpolateVector function
 int interpolateVector(int *A, int *B, int *C){
-  // fullfil vector 3
+  // fulfil vector 3
   for (int i = 0; i < size; i++) { // A in even positions of C
     C[i*2] = A[i]; //c[0] = a[0], c[2] = a[1], c[4] = a[2]...
   }

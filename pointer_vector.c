@@ -8,7 +8,7 @@
 // readVector function prototype
 void readVector(int *v, int n);
 
-// biggestElement function prototype
+// maxElement function prototype
 void maxElement(int *v, int n, int *max);
 
 // main function

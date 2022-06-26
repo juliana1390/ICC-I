@@ -14,7 +14,7 @@ int subtract_matrix(int **mat1, int **mat2, int **mat3, int lin, int col);
 int print_matrix(int **mat3, int lin, int col);
 void free_matrix(int **mat1, int **mat2, int **mat3, int lin);
 
-// funcao main
+// main function
 int main(void) {  
   int **mat1, **mat2, **mat3, lin, col, i, j;
 

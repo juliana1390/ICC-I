@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-// countaDigits function prototype
+// countDigits function prototype
 int countDigits(int n, int d);
 
 // main function
@@ -15,21 +15,19 @@ int main() {
     digits_a = countDigits(a, i);
     digits_b = countDigits(b, i);
     if (digits_a != digits_b) {
-      printf("It is not swap!\n");
+      printf("It is not a swap!\n");
       return(0);
     }
   }
 
-  printf("It is swap!\n");
+  printf("It is a swap!\n");
   return(0);
 }
 
-// countaDigits function
+// countDigits function
 int countDigits(int n, int d) {
 
-  int i, remainder;
-
-  i = 0;
+  int i = 0, remainder;
 
   // count digits
   while (n > 0) {
