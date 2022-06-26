@@ -1,12 +1,18 @@
+/*
+    - read matrices;
+    - subtract matrices;
+    - print matrices;
+    - free up space.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 
 // function prototypes
 void read_matrix(int **mat1, int **mat2, int lin, int col);
 int subtract_matrix(int **mat1, int **mat2, int **mat3, int lin, int col);
 int print_matrix(int **mat3, int lin, int col);
-void setfree_matrix(int **mat1, int **mat2, int **mat3, int lin);
+void free_matrix(int **mat1, int **mat2, int **mat3, int lin);
 
 // funcao main
 int main(void) {  
@@ -32,7 +38,7 @@ int main(void) {
 
   subtract_matrix(mat1, mat2, mat3, lin, col);
   print_matrix(mat3, lin, col);
-  setfree_matrix(mat1, mat2, mat3, lin);
+  free_matrix(mat1, mat2, mat3, lin);
   
   return 0;
 }
@@ -41,26 +47,15 @@ int main(void) {
 void read_matrix(int **mat1, int **mat2, int lin, int col){
   
   int i, j;
-  
-  /*
-  srand(time(NULL));
-  // random numbers from 0 to (lin*col)
-  for(i = 0; i < lin;i++){
-    for(j = 0; j < col; j++){
-      mat1[i][j] = rand() % (lin*col);
-      mat2[i][j] = rand() % (lin*col);
-    }
-  }
-  */
 
   // input matrix 1
   printf("Insert the 1st matrix: \n");
   for(i = 0; i < lin; i++){
     for(j = 0; j < col; j++){
       scanf("%d ", &mat1[i][j]);
-    } 
+    }
+    printf("\n");
   }
-  //printf("\n");
   
   // input matrix 2
   printf("Insert the 2nd matrix: \n");
@@ -70,26 +65,13 @@ void read_matrix(int **mat1, int **mat2, int lin, int col){
     }
     printf("\n");
   }
-  /*
-  printf("Matrix 1: \n");
-  for(i = 0; i < lin;i++){
-    for(j = 0; j < col; j++) printf("%d ", mat1[i][j]);
-    printf("\n");
-  }
-  printf("\n");
-  
-  printf("Matrix 2: \n");
-  for(i = 0; i < lin;i++){
-    for(j = 0; j < col; j++) printf("%d ", mat2[i][j]);
-    printf("\n");
-  }*/
 }
 
 // subtract_matrix function
 int subtract_matrix(int **mat1, int **mat2, int **mat3, int lin, int col){
   int i, j;
 
-  // subtract
+  // subtraction
   for(i = 0; i < lin;i++){
     for(j = 0; j < col; j++) mat3[i][j] = mat1[i][j] - mat2[i][j];
   }
@@ -107,8 +89,8 @@ int print_matrix(int **mat3, int lin, int col){
   }
 }
 
-// setfree_matrix function
-void setfree_matrix(int **mat1, int **mat2, int **mat3, int lin){
+// free_matrix function
+void free_matrix(int **mat1, int **mat2, int **mat3, int lin){
   int i, j;
   
   for(i = 0; i < lin; i++) {

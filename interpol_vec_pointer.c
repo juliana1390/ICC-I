@@ -1,3 +1,8 @@
+/*
+    - order vectors;
+    - interpolate two vectors;
+*/
+
 #include <stdio.h>
 #define size 5
 

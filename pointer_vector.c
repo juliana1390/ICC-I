@@ -1,20 +1,27 @@
+/*
+    - function pointer;
+    - find the max element in the vector.
+ */
+
 #include <stdio.h>
 
 // readVector function prototype
 void readVector(int *v, int n);
 
 // biggestElement function prototype
-void biggestElement(int *v, int n, int *biggest);
+void maxElement(int *v, int n, int *max);
 
 // main function
 int main(void) {
-  int n, biggest;
+  int n, max;
+  
+  printf("Insert the size of the vector: ");
   scanf("%d", &n);
 
   int v[n];
   readVector(v, n);
-  biggestElement(v, n, &biggest);
-  printf("%d", biggest);  
+  maxElement(v, n, &max);
+  printf("%d", max);
   
   return 0;
   
@@ -22,17 +29,18 @@ int main(void) {
 
 // readVector function
 void readVector(int *v, int n){
+  printf("Insert the vector:\n");
   for(int i = 0; i < n; i++){
     scanf("%d", &v[i]);    
   }
 }
 
-// biggestElement function
-void biggestElement(int *v, int n, int *biggest){
-  (*biggest) = v[0]; 
+// maxElement function
+void maxElement(int *v, int n, int *max){
+  (*max) = v[0];
   for(int i = 1; i < n; i++){
-    if(v[i] > (*biggest)){ 
-      (*biggest) = v[i];
+    if(v[i] > (*max)){
+      (*max) = v[i];
     }
   }
 }
